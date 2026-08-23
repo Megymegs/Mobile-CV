@@ -483,6 +483,20 @@ footer a {
   color: var(--accent);
 }
 
+.fun-fact {
+  background: var(--bg-alt);
+  border: 1px dashed rgba(191, 34, 85, 0.4);
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.fun-fact i {
+  font-size: 1.75rem;
+  color: var(--accent);
+}
+
 .gallery-grid .caption {
   position: absolute;
   inset: 0;
