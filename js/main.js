@@ -169,24 +169,42 @@ document.addEventListener("DOMContentLoaded", function () {
   // "Earthly Age" vs "Dev Age" — both calculated live from today's date so
   // they're always correct, rather than a number that needs updating by hand.
   //
-  // Dev Age multiplier: chronic stress and short sleep are both linked in
-  // published research to measurably faster cellular aging (e.g. Epel et al.,
-  // PNAS 2004, found sustained high perceived stress corresponded to roughly
-  // a decade of extra telomere aging). That's rounded here, for fun rather
-  // than clinical precision, into a ~2x multiplier applied only to the years
-  // actually spent working as a developer.
+  // Dev Age = Earthly Age + extra cellular aging accumulated over the years
+  // actually spent working as a developer (career start -> today). That
+  // extra aging is modelled as three contributing factors, each inspired by
+  // published research (rounded for fun, not clinical precision):
+  //   - Lack of sleep:    short/poor sleep is linked to faster telomere
+  //                       shortening (a measurable marker of cellular aging).
+  //   - Stress:           Epel et al., PNAS 2004 found sustained high
+  //                       perceived stress corresponded to roughly a decade
+  //                       of extra telomere aging.
+  //   - Mental drain:     sustained heavy cognitive load taps the same
+  //                       stress-response (HPA axis) pathway, compounding
+  //                       the effect above.
   var earthlyAgeEl = document.getElementById("earthlyAge");
   var devAgeEl = document.getElementById("devAge");
   if (earthlyAgeEl && devAgeEl) {
     var MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.25;
-    var DEV_YEAR_MULTIPLIER = 2;
+
+    // Extra years of cellular aging per year worked as a developer,
+    // one contribution per factor.
+    var EXTRA_AGING_PER_DEV_YEAR = {
+      lackOfSleep: 0.3,
+      stress: 0.4,
+      mentalDrain: 0.3
+    };
+
     var birthDate = new Date(1993, 4, 14); // 14 May 1993
     var devStartDate = new Date(2017, 7, 1); // August 2017 — started learning to code
     var now = new Date();
 
     var earthlyAgeYears = (now - birthDate) / MS_PER_YEAR;
     var yearsAsDev = Math.max(0, (now - devStartDate) / MS_PER_YEAR);
-    var devAgeYears = earthlyAgeYears + yearsAsDev * (DEV_YEAR_MULTIPLIER - 1);
+    var extraAgingPerYear =
+      EXTRA_AGING_PER_DEV_YEAR.lackOfSleep +
+      EXTRA_AGING_PER_DEV_YEAR.stress +
+      EXTRA_AGING_PER_DEV_YEAR.mentalDrain;
+    var devAgeYears = earthlyAgeYears + yearsAsDev * extraAgingPerYear;
 
     earthlyAgeEl.textContent = Math.floor(earthlyAgeYears);
     devAgeEl.textContent = Math.floor(devAgeYears);
