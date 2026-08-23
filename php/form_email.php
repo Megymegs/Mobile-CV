@@ -20,11 +20,11 @@ if (isset($_GET['email'])){
 
   $first_name = $_GET['first_name']; //required
   $last_name = $_GET['last_name']; //required
-  $email = $_GET['email']; //required
+  $email_from = $_GET['email']; //required
   $message = $_GET['message']; //required
 
   $error_message = "";
-  $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-09.-]+\.[A-Za-z]{2,4}$/';
+  $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 
   if (!preg_match($email_exp, $email_from)){
     $error_message .= 'Invalid email address, please check email address. <br>';
@@ -50,7 +50,7 @@ if (isset($_GET['email'])){
   $email_message = "Form details below.\n\n";
 
   function clean_string($string){
-    $bad = array ("content-type", "bcc:", "cc:", "href");
+    $bad = array ("content-type", "bcc:", "cc:", "href", "\r", "\n", "%0a", "%0d");
     return str_replace($bad, "", $string);
   }
 
@@ -59,10 +59,10 @@ if (isset($_GET['email'])){
   $email_message .="Email: ". clean_string($email_from)."\n";
   $email_message .="Message: ". clean_string($message)."\n";
 
-  $headers = "From: ".$email_from."\r\n".
-  "Reply-To: ". $email_from. "\r\n".
+  $headers = "From: ".clean_string($email_from)."\r\n".
+  "Reply-To: ". clean_string($email_from). "\r\n".
   "X-Mailer: PHP/" . phpversion();
-  @email($email_to, $email_subject, $email_message, $headers);
+  @mail($email_to, $email_subject, $email_message, $headers);
 
   ?>
   Thank you for contacting me, I will be in touch soon.
