@@ -322,6 +322,18 @@ footer a {
   padding: 0.25rem 0;
 }
 
+@media (min-width: 768px) {
+  .cert-list {
+    columns: 2;
+    column-gap: 2rem;
+  }
+
+  .cert-list li {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+  }
+}
+
 .edu-block li i {
   color: var(--accent);
   margin-right: 0.5rem;
