@@ -312,6 +312,19 @@ footer a {
   margin-bottom: 0.75rem;
 }
 
+.cert-issuer {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-light);
+  margin: 1.25rem 0 0.4rem;
+}
+
+.cert-issuer:first-of-type {
+  margin-top: 0;
+}
+
 .edu-block ul {
   list-style: none;
   padding-left: 0;
