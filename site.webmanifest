@@ -1,3 +1,9 @@
 {
-    "url": ""
+    "name": "Megan Meyer - CV",
+    "short_name": "Megan Meyer",
+    "description": "CV and portfolio of Megan Meyer, Front-End Developer",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#0d0e11",
+    "theme_color": "#0d0e11"
 }

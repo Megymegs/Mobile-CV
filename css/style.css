@@ -1,0 +1,652 @@
+/* ==========================================================================
+   Megan Meyer — CV / Portfolio
+   Modern, fully responsive stylesheet (Bootstrap 5 base + custom theme)
+   ========================================================================== */
+
+:root {
+  --accent: #bf2255;
+  --accent-dark: #8e1a40;
+  /* Lighter tint of the accent, used for text links on dark backgrounds so
+     body copy meets the WCAG AA 4.5:1 contrast minimum (the base --accent
+     only reaches ~3.2:1 against --bg-dark). */
+  --link: #e05c86;
+  --bg-dark: #14151a;
+  --bg-darker: #0d0e11;
+  --bg-alt: #1c1e24;
+  --text-light: #f5f5f7;
+  --text-muted: #b8b9c0;
+  --font-heading: "Lato", sans-serif;
+  --font-body: "Merriweather", serif;
+
+  /* Bootstrap's own utilities (.text-muted, .text-body-secondary, the
+     accordion's default border colours, etc.) read from these variables.
+     Bootstrap's defaults assume a light page background, so left alone
+     they render as near-invisible dark grey text on our dark theme.
+     Overriding them here fixes every Bootstrap utility class at once
+     instead of fighting each one individually with !important. */
+  --bs-body-color: var(--text-light);
+  --bs-body-bg: var(--bg-dark);
+  --bs-secondary-color: var(--text-muted);
+  --bs-emphasis-color: var(--text-light);
+  --bs-border-color: rgba(255, 255, 255, 0.15);
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect users who have asked the OS/browser to reduce motion (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  padding-top: 0; /* only the app view (below) needs room for the fixed navbar */
+}
+
+/* ---- App-style navigation ----
+   The site behaves like a small app: it opens on a landing page and each
+   nav item swaps in a single content "page" (with a brief loading screen)
+   rather than continuously scrolling through every section. This is all
+   progressive enhancement done in js/main.js — if JavaScript fails to load,
+   every section is still present in the DOM and simply flows as one long,
+   scrollable page. */
+#mainNavbar {
+  display: none;
+}
+
+body.app-active {
+  padding-top: 56px;
+}
+
+body.app-active #mainNavbar {
+  display: flex;
+}
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-darker);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.page-loader.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-loader .spinner {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: #f18cab;
+}
+
+/* Inline text links need more than colour alone to be identifiable
+   (WCAG 1.4.1 Use of Color), so underline them within prose content. */
+.about-text a,
+.edu-block a,
+.contact-info a,
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Visible keyboard focus indicator for every focusable element
+   (WCAG 2.4.7 Focus Visible). */
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+/* Mobile-first: base padding is for small screens, widened on larger ones. */
+.section {
+  padding: 3rem 0;
+}
+
+@media (min-width: 576px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+.section-alt {
+  background-color: var(--bg-alt);
+}
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0.75rem auto 0;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+  background-color: var(--bg-darker) !important;
+}
+
+.navbar .nav-link {
+  color: var(--text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--accent);
+}
+
+/* ---- Hero / landing page ----
+   This is the app's "landing page": the navbar is hidden while it's showing
+   (see body.app-active above), so it always fills the full viewport height. */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(rgba(13, 14, 17, 0.82), rgba(13, 14, 17, 0.92)),
+    url("../images/flower.jpg") center/cover no-repeat;
+  padding: 3rem 1rem;
+}
+
+.hero-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(191, 34, 85, 0.5);
+  margin-bottom: 1.5rem;
+  filter: grayscale(1);
+  animation: photo-reveal 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes photo-reveal {
+  to {
+    filter: grayscale(0);
+  }
+}
+
+@media (min-width: 576px) {
+  .hero-photo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.hero p.tagline {
+  font-family: var(--font-heading);
+  color: var(--text-muted);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.hero-nav a {
+  border: 1px solid var(--accent);
+  color: var(--text-light);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  opacity: 0;
+  transform: translateY(14px) scale(0.92);
+  animation: nav-pop 0.5s ease forwards;
+}
+
+/* Buttons "pop" out of the photo one at a time, mirroring the original
+   landing page's staggered reveal. */
+.hero-nav a:nth-child(1) { animation-delay: 0.9s; }
+.hero-nav a:nth-child(2) { animation-delay: 1.05s; }
+.hero-nav a:nth-child(3) { animation-delay: 1.2s; }
+.hero-nav a:nth-child(4) { animation-delay: 1.35s; }
+.hero-nav a:nth-child(5) { animation-delay: 1.5s; }
+.hero-nav a:nth-child(6) { animation-delay: 1.65s; }
+.hero-nav a:nth-child(7) { animation-delay: 1.8s; }
+
+@keyframes nav-pop {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-nav a:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* ---- About ---- */
+.about-text {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ---- Education ---- */
+.edu-block {
+  margin-bottom: 2rem;
+}
+
+.edu-block h3 {
+  font-size: 1.1rem;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.edu-block ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.edu-block li {
+  padding: 0.25rem 0;
+}
+
+.edu-block li i {
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+/* ---- Skills ---- */
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.badge-skill {
+  display: inline-block;
+  background: var(--bg-alt);
+  border: 1px solid rgba(191, 34, 85, 0.35);
+  color: var(--text-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.badge-skill:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---- Services ---- */
+.service-card {
+  background: var(--bg-dark);
+  border-radius: 12px;
+  padding: 1.75rem 1rem;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(191, 34, 85, 0.25);
+}
+
+.service-card i {
+  font-size: 1.75rem;
+  color: var(--accent);
+}
+
+/* ---- Careers (accordion) ---- */
+.accordion-button {
+  background-color: var(--bg-alt);
+  color: var(--text-light);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--accent-dark);
+  color: #fff;
+}
+
+.accordion-button::after {
+  filter: invert(1);
+}
+
+.accordion-body {
+  background-color: var(--bg-dark);
+  color: var(--text-muted);
+}
+
+/* ---- Portfolio ---- */
+.portfolio-tabs .nav-link {
+  color: var(--text-light);
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  margin: 0 0.35rem 0.5rem;
+}
+
+.portfolio-tabs .nav-link.active {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-grid a {
+  position: relative;
+  display: block;
+  flex: 1 1 calc(50% - 0.75rem);
+}
+
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.04);
+}
+
+@media (min-width: 576px) {
+  .gallery-grid a {
+    flex: 1 1 calc(33.333% - 0.75rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery-grid a {
+    flex: 1 1 calc(20% - 0.75rem);
+  }
+}
+
+.featured-project {
+  background: var(--bg-alt);
+  border: 1px solid rgba(191, 34, 85, 0.35);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.featured-project i {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.gallery-grid .caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 14, 17, 0.55);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.gallery-grid a:hover .caption,
+.gallery-grid a:focus-visible .caption {
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: var(--bg-alt);
+  color: var(--text-light);
+}
+
+/* ---- Contact ---- */
+.contact-form .form-control {
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+}
+
+.contact-form .form-control:focus {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(191, 34, 85, 0.25);
+}
+
+.contact-form label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-family: var(--font-heading);
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+}
+
+.btn-icon {
+  font-size: 0.8em;
+  margin-left: 0.4em;
+  vertical-align: middle;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+/* ---- Featured project: mini browser-frame preview ---- */
+.site-preview {
+  max-width: 480px;
+  margin: 1.5rem auto 1.75rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  background: #fff;
+}
+
+.site-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-darker);
+}
+
+.site-preview-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.site-preview-dot-red {
+  background: #ff5f56;
+}
+
+.site-preview-dot-yellow {
+  background: #ffbd2e;
+}
+
+.site-preview-dot-green {
+  background: #27c93f;
+}
+
+.site-preview-url {
+  margin-left: auto;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.site-preview iframe {
+  display: block;
+  width: 100%;
+  height: 260px;
+  border: 0;
+}
+
+@media (min-width: 576px) {
+  .site-preview iframe {
+    height: 320px;
+  }
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  color: var(--text-light);
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.contact-info li {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.contact-info li i {
+  color: var(--accent);
+  width: 1.5rem;
+}
+
+.references-list li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0;
+}
+
+/* ---- Footer ---- */
+footer {
+  background-color: var(--bg-darker);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+}
+
+/* ---- Back to top ---- */
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1030;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}

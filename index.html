@@ -1,827 +1,654 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Megan Meyer - CV</title>
-    <meta name="description" content="CV of Megan Meyer">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Megan Meyer - CV</title>
+  <meta name="description" content="CV and portfolio of Megan Meyer, freelance web developer based in Cape Town, South Africa">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0e11">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"
+        integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-    <body>
-      <section id="thetop">
-        <div class="col-sm-12 landing-page d-lg-none" id="home">
-    <p class="welcome-text text-center d-none d-lg-block">Please hover over image</p>
-    <p class="welcome-text text-center pt-2">Please select one to read more</p>
-    <div class="col-sm-8 col-md-6 col-8 bg-img mx-auto">
-        <div class="overlay">
-            <img src="images/ProfMe.jpg" alt="Phot of Megan Meyer" class="rounded-circle img-fluid">
-            <div class="info-holder">
-                <h1>Megan Meyer</h1>
-                <p> Mid<br/>Front-End<br/> Developer</p>
-            </div>
-            <a href="#About" class="overlay-text About">About</a>
-            <a href="#Education" class="overlay-text Education">Education</a>
-            <a href="#Skills" class="overlay-text Skills">Skills</a>
-            <a href="#Careers" class="overlay-text Careers">Careers</a>
-            <a href="#Portfolio" class="overlay-text Portfolio">Portfolio</a>
-        </div>
+<body>
+
+  <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+
+  <!-- Shown briefly whenever the app switches between the landing page and a content section -->
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="spinner" role="status">
+      <span class="visually-hidden">Loading&hellip;</span>
     </div>
-</div>
+  </div>
 
-<div class="d-none d-lg-block sorry">
-    <div class="landing-overlay"></div>
-    <div class="holder">
-        <h1>OOPS!!</h1>
-        <h4>Sorry This CV is only available to view on mobile or tablet</h4>
-    </div>
-</div>
-
-        <div>
-          <img src="images/loading.gif" alt="Loading image" width="100%" height="100%" id="loading">
-        </div>  
-        <main id="mainBody">                    
-          
-<div>
-    <img src="images/loading.gif" class="w-100" alt="Loading image" id="loading">
-</div>
-
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand Home" id="to-landing" href="#home">
-        <i class="fa fa-home" aria-hidden="true"></i>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home" aria-label="Home"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto d-lg-none">
-            <a href="#About" class="About" id="mobileAbout">About</a>
-            <a href="#Education" class="Education" id="mobileEducation">Education</a>
-            <a href="#Skills" class="Skills" id="mobileSkills">Skills</a>
-            <a href="#Careers" class="Careers" id="mobileCareers">Careers</a>
-            <a href="#Portfolio" class="Portfolio" id="mobilePortfolio">Portfolio</a>
-            <a href="#Contact" class="Contact" id="mobileContact">Contact</a>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#careers">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <ul class="navbar-nav mr-auto d-none d-lg-flex">
-            <a href="#About" class="About">
-                <li id="Nav1">About</li>
-            </a>
-            <a href="#Education" class="Education">
-                <li id="Nav2">Education</li>
-            </a>
-            <a href="#Skills" class="Skills">
-                <li id="Nav3">Skills</li>
-            </a>
-            <a href="#Careers" class="Careers">
-                <li id="Nav4">Careers</li>
-            </a>
-            <a href="#Portfolio" class="Portfolio">
-                <li id="Nav5">Portfolio</li>
-            </a>
-            <a href="#Contact" class="Contact">
-                <li id="Nav6">Contact</li>
-            </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div>
+      <img src="images/ProfMe.jpg" alt="Photo of Megan Meyer" class="hero-photo">
+      <h1>Megan Meyer</h1>
+      <p class="tagline">Freelance Web Developer &middot; Cape Town, South Africa</p>
+      <nav class="hero-nav" aria-label="Section shortcuts">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#careers">Careers</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-text">
+          <p>With more than six years of web development experience, I now run my own freelance web development
+            practice. I work across Laravel, Shopify, Liquid, WordPress, Magento, PHP, MySQL, HTML, CSS, Sass, and
+            JavaScript, delivering websites and web applications for clients in e-commerce, government, and the
+            public sector. Before going freelance, I led a front-end team and collaborated on innovative solutions
+            for dynamic client needs.</p>
+          <p>I am based in Cape Town, available 24/7 across time zones, and I target US, UK, and EU clients for
+            remote contract, part-time, and freelance work. I bring strong organisational skills, a friendly
+            problem-solving approach, and a constant drive for excellence to every project I take on.</p>
+          <p class="text-muted mb-0"><i class="fa-solid fa-language" aria-hidden="true"></i>
+            &nbsp;English (Native or Bilingual) &middot; Afrikaans (Limited Working)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="edu-block">
+              <h3>High School</h3>
+              <ul>
+                <li><i class="fa-solid fa-star" aria-hidden="true"></i>
+                  Oude Molen Technical High School — Electrical Engineering Technologies/Technicians (2008 - 2010)
+                </li>
+              </ul>
+            </div>
+            <div class="edu-block">
+              <h3>Certifications <span class="text-muted fw-normal">(LinkedIn Learning)</span></h3>
+              <ul>
+                <li><i class="fa-solid fa-star" aria-hidden="true"></i>Succeeding in Web Development: Full Stack and Front End</li>
+                <li><i class="fa-solid fa-star" aria-hidden="true"></i>Front End Development</li>
+                <li><i class="fa-solid fa-star" aria-hidden="true"></i>Introduction to Artificial Intelligence</li>
+                <li><i class="fa-solid fa-star" aria-hidden="true"></i>Ethics in the Age of Generative AI</li>
+                <li><i class="fa-solid fa-star" aria-hidden="true"></i>How to Crush Self-Doubt and Build Self-Confidence</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="row justify-content-center g-4">
+          <div class="col-md-6 col-lg-4">
+            <h3 class="h6 text-uppercase text-muted">Languages &amp; Frameworks</h3>
+            <div class="skill-badges">
+              <span class="badge-skill">PHP</span><span class="badge-skill">Laravel</span>
+              <span class="badge-skill">JavaScript</span><span class="badge-skill">HTML</span>
+              <span class="badge-skill">CSS</span><span class="badge-skill">Sass</span>
+              <span class="badge-skill">MySQL</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <h3 class="h6 text-uppercase text-muted">Platforms &amp; CMS</h3>
+            <div class="skill-badges">
+              <span class="badge-skill">Shopify</span><span class="badge-skill">Liquid</span>
+              <span class="badge-skill">WordPress</span><span class="badge-skill">Magento</span>
+              <span class="badge-skill">E-commerce</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <h3 class="h6 text-uppercase text-muted">Tools</h3>
+            <div class="skill-badges">
+              <span class="badge-skill">Git</span><span class="badge-skill">Visual Studio Code</span>
+              <span class="badge-skill">Zoho</span><span class="badge-skill">Zoho Projects</span>
+              <span class="badge-skill">Excel</span><span class="badge-skill">Databases</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <h3 class="h6 text-uppercase text-muted">Ways of Working</h3>
+            <div class="skill-badges">
+              <span class="badge-skill">Agile Methodologies</span><span class="badge-skill">Scrum</span>
+              <span class="badge-skill">Critical Thinking</span><span class="badge-skill">Coaching</span>
+              <span class="badge-skill">Team Development</span><span class="badge-skill">Responsive Design</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <h3 class="h6 text-uppercase text-muted">Admin &amp; Virtual Assistance</h3>
+            <div class="skill-badges">
+              <span class="badge-skill">Data Entry</span><span class="badge-skill">Typing</span>
+              <span class="badge-skill">Transcription</span><span class="badge-skill">Research</span>
+              <span class="badge-skill">Virtual Assistant</span><span class="badge-skill">Email Management</span>
+              <span class="badge-skill">Calendar Management</span><span class="badge-skill">Social Media Management</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <h3 class="h6 text-uppercase text-muted">Content</h3>
+            <div class="skill-badges">
+              <span class="badge-skill">Content Writing</span><span class="badge-skill">Proofreading</span>
+              <span class="badge-skill">Full-Stack Development</span><span class="badge-skill">Frontend Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="row g-4 justify-content-center text-center">
+          <div class="col-sm-6 col-lg-3">
+            <div class="service-card">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <h3 class="h6 mt-2">Web Development</h3>
+              <p class="text-muted small mb-0">PHP, Laravel, Shopify, Liquid, WordPress, Magento &amp; e-commerce builds</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="service-card">
+              <i class="fa-solid fa-headset" aria-hidden="true"></i>
+              <h3 class="h6 mt-2">Virtual Assistance</h3>
+              <p class="text-muted small mb-0">Data entry, transcription, research, email &amp; calendar management</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="service-card">
+              <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+              <h3 class="h6 mt-2">Content &amp; Admin</h3>
+              <p class="text-muted small mb-0">Content writing, proofreading, document formatting, social media</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="service-card">
+              <i class="fa-solid fa-plane" aria-hidden="true"></i>
+              <h3 class="h6 mt-2">Planning &amp; Coordination</h3>
+              <p class="text-muted small mb-0">Itinerary &amp; travel planning, spreadsheet cleanup, order management</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Careers -->
+    <section id="careers" class="section">
+      <div class="container">
+        <h2 class="section-title">Careers</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="careersAccordion">
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFreelance">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFreelance" aria-expanded="true" aria-controls="collapseFreelance">
+                    Self-employed &mdash; Freelance Web Developer
+                  </button>
+                </h3>
+                <div id="collapseFreelance" class="accordion-collapse collapse show" aria-labelledby="headingFreelance" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town, South Africa &middot; October 2025 - Present</p>
+                    <ul class="mb-0">
+                      <li>Run my own freelance web development practice.</li>
+                      <li>Design and build dynamic web applications and e-commerce solutions.</li>
+                      <li>Work across Laravel, Shopify, WordPress, and Magento platforms.</li>
+                      <li>Adapt quickly to new technologies and client requirements while delivering high-quality work.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSensofinity">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSensofinity" aria-expanded="false" aria-controls="collapseSensofinity">
+                    Sensofinity &mdash; Website Administrator
+                  </button>
+                </h3>
+                <div id="collapseSensofinity" class="accordion-collapse collapse" aria-labelledby="headingSensofinity" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town Area, South Africa &middot; May 2025 - October 2025</p>
+                    <ul class="mb-0">
+                      <li>Managed website operations and improved user experience and performance.</li>
+                      <li>Used Agile methodologies and Zoho Projects to streamline web development workflows.</li>
+                      <li>Developed e-commerce platforms using Shopify and front-end technologies such as HTML and CSS.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingEcomplete">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEcomplete" aria-expanded="false" aria-controls="collapseEcomplete">
+                    Ecomplete Commerce &mdash; Frontend Team Lead
+                  </button>
+                </h3>
+                <div id="collapseEcomplete" class="accordion-collapse collapse" aria-labelledby="headingEcomplete" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">City of Cape Town, Western Cape, South Africa &middot; October 2018 - April 2025</p>
+                    <ul class="mb-0">
+                      <li>Led the frontend development team and drove innovative e-commerce solutions.</li>
+                      <li>Applied Agile methodologies to deliver projects efficiently and improve team collaboration.</li>
+                      <li>Coached team members and used critical thinking to foster continuous improvement.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingWarp">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWarp" aria-expanded="false" aria-controls="collapseWarp">
+                    Warp Development &mdash; Junior Front-End Developer
+                  </button>
+                </h3>
+                <div id="collapseWarp" class="accordion-collapse collapse" aria-labelledby="headingWarp" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town Area, South Africa &middot; August 2018 - September 2018</p>
+                    <ul class="mb-0">
+                      <li>Created and duplicated WordPress themes and ensured all themes were fully responsive.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingIsoflow">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIsoflow" aria-expanded="false" aria-controls="collapseIsoflow">
+                    Isoflow &mdash; Intern
+                  </button>
+                </h3>
+                <div id="collapseIsoflow" class="accordion-collapse collapse" aria-labelledby="headingIsoflow" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town Area, South Africa &middot; February 2018 - July 2018</p>
+                    <ul class="mb-0">
+                      <li>Worked with a small team to develop responsive web applications and enhance front-end skills.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingLifeChoices">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLifeChoices" aria-expanded="false" aria-controls="collapseLifeChoices">
+                    Life Choices &mdash; Student
+                  </button>
+                </h3>
+                <div id="collapseLifeChoices" class="accordion-collapse collapse" aria-labelledby="headingLifeChoices" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town Area, South Africa &middot; August 2017 - January 2018</p>
+                    <ul class="mb-0">
+                      <li>Immersed in website development and frontend technologies including HTML, CSS, JavaScript, and Sass.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingRomp">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRomp" aria-expanded="false" aria-controls="collapseRomp">
+                    Romp 'n Roll China &mdash; English Language Teacher
+                  </button>
+                </h3>
+                <div id="collapseRomp" class="accordion-collapse collapse" aria-labelledby="headingRomp" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Anshan City, Liaoning, China &middot; August 2016 - May 2017</p>
+                    <ul class="mb-0">
+                      <li>Taught English as a second language to students aged 10 months to 6 years old.</li>
+                      <li>Engaged young learners through interactive and playful methods.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingDenis">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDenis" aria-expanded="false" aria-controls="collapseDenis">
+                    Denis &mdash; Data Capturer
+                  </button>
+                </h3>
+                <div id="collapseDenis" class="accordion-collapse collapse" aria-labelledby="headingDenis" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town Area, South Africa &middot; February 2016 - June 2016</p>
+                    <ul class="mb-0">
+                      <li>Captured medical aid dental claims for dental practices and members.</li>
+                      <li>Helped alleviate departmental backlogs and maintained data integrity.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTPP2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTPP2" aria-expanded="false" aria-controls="collapseTPP2">
+                    The Publishing Partnership &mdash; Junior Administrator
+                  </button>
+                </h3>
+                <div id="collapseTPP2" class="accordion-collapse collapse" aria-labelledby="headingTPP2" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town Area, South Africa &middot; October 2015 - January 2016</p>
+                    <ul class="mb-0">
+                      <li>Cold called schools requesting their current stationery list for each grade.</li>
+                      <li>Received and downloaded stationery lists from school websites.</li>
+                      <li>Created SKU lists and uploaded them onto the back end of the CNA website.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingKalahari">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseKalahari" aria-expanded="false" aria-controls="collapseKalahari">
+                    kalahari.com &mdash; Data Capturer
+                  </button>
+                </h3>
+                <div id="collapseKalahari" class="accordion-collapse collapse" aria-labelledby="headingKalahari" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town Area, South Africa &middot; November 2014 - February 2015</p>
+                    <ul class="mb-0">
+                      <li>Followed up on orders and ensured orders were shipped and delivered on time.</li>
+                      <li>Contacted sellers to ship orders and approved cancellation and return requests.</li>
+                      <li>Ensured orders did not remain on fraud check longer than required.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingPSG">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePSG" aria-expanded="false" aria-controls="collapsePSG">
+                    PSG Konsult Ltd &mdash; Administrator
+                  </button>
+                </h3>
+                <div id="collapsePSG" class="accordion-collapse collapse" aria-labelledby="headingPSG" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">Cape Town Area, South Africa &middot; December 2010 - February 2011</p>
+                    <ul class="mb-0">
+                      <li>Fund administration: updating data files on in-house program and sending statements to clients.</li>
+                      <li>FICA administration: confirming and updating FICA requirements.</li>
+                      <li>Data capturing and scanning.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingHashtopic">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHashtopic" aria-expanded="false" aria-controls="collapseHashtopic">
+                    Hashtopic &mdash; Freelance Web Developer / Collaborator
+                  </button>
+                </h3>
+                <div id="collapseHashtopic" class="accordion-collapse collapse" aria-labelledby="headingHashtopic" data-bs-parent="#careersAccordion">
+                  <div class="accordion-body">
+                    <p class="mb-2 text-muted">South Africa &middot; Project-based collaboration</p>
+                    <ul class="mb-2">
+                      <li>Built and maintained public-facing websites for South African government and public-sector bodies.</li>
+                      <li>Delivered reliable, deadline-driven work across multiple municipality and tribunal platforms.</li>
+                    </ul>
+                    <p class="mb-1 fw-bold small text-uppercase text-muted">Projects</p>
+                    <ul class="mb-0">
+                      <li>National Benchmark Test</li>
+                      <li>South African Bureau of Standards</li>
+                      <li>The Competition Tribunal</li>
+                      <li>Competition Appeal Court</li>
+                      <li>Cape Winelands Municipality</li>
+                      <li>Swartland Municipality</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+
+        <ul class="nav nav-pills justify-content-center portfolio-tabs" id="portfolioTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="drawings-tab" data-bs-toggle="pill" data-bs-target="#drawings-pane"
+                    type="button" role="tab" aria-controls="drawings-pane" aria-selected="true">Hand Drawings</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="projects-tab" data-bs-toggle="pill" data-bs-target="#projects-pane"
+                    type="button" role="tab" aria-controls="projects-pane" aria-selected="false">Web Projects</button>
+          </li>
         </ul>
-    </div>
-</nav>
-          <div class="col-11 main-content d-md-none ml-auto mr-auto pt-4 pb-3 ">
-    <div id="About">
-        <h3>About</h3>
-        <p>I am a hard-working creative individual with local as well as international experience in the working world in different career paths. I am punctual and pride myself in meeting deadlines, I work well under pressure and I am able to work within a team as well as on my own on tasks and projects.</p>
-        <p>As an individual I bring logical and innovative thinking, I work systemically to ensure the task at hand is completed on time. I have strong attention to detail and the abilty to remain calm within a stressful enviroment.</p>
-    </div>
-    <div id="Education">
-        <h3>Education</h3>
-        <div class="edu mt-4 mb-4">
-            <h6><ins>High School</ins></h6>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i><a href="www.oudemolen.org.za/">Oude Molen Technical High School - Matric (2010) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <h6 class="mt-4"><ins>Vocational Courses</ins></h6>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"><a href="https://www.globaltefl.uk.com/"></i>Global Language Training - 150 Master TEFL Course (2014) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"><a href="https://www.goskills.com/"></i>Go Skills Limited - Advanced Microsoft Excel (2015) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-        </div>
-        <div class="edu mt-4 mb-4">
-            <h6><ins><a href="https://www.open2study.com/" target="_blank" style="color: black;">Open 2 Study </a> (2016) <i class="fa fa-external-link" aria-hidden="true"></i></ins></h6>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Management for a Competitive Edge</li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Leadership: Identity, Influence and Power</li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Human Resources</li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Strategic Management</li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Negotiation and Conflict Resolution</li>
-        </div>
-        <div class=" mt-4 mb-4" id="bottomColumn">
-            <h6><ins><a href="www.lifechoices.co.za/">Salesians Life Choices Academy <i class="fa fa-external-link" aria-hidden="true"></i></a></ins></h6>
-            <p>I completed a 6-month course at Life Choices Academy, learning the Most Important Job Skill of the Future, CODING! During my time at Lifechoices, I learnt modern web languages(HTML, CSS, jQuery, JavaScript, Sass etc), design thinking and undergo professional development (i.e to work cohesively in a team and get practice with the tools used in the professional industry.) that has prepared me for the working world. I have gained confidence in being able to assess problems and design solutions to the problems.</p>
-        </div>
-    </div>
-    <div id="Skills">
-        <h3>Skills</h3>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators mb-0">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block" src="images/Word.png" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" src="images/outlook.png" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" src="images/excel.png" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" id="corelDraw" src="images/coreldraw.png" alt="Fouth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" src="images/photoshop.png" alt="Fifth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" id="html" src="images/HTML.png" alt="Sixth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-50" src="images/CSS.png" alt="Seventh slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-50" src="images/CSS_Grid.jpg" alt="Eighth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" src="images/javascript.png" alt="Ninth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" src="images/jquery.png" alt="Tenth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-50" src="images/Git.png" alt="Eleventh slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-50" src="images/SASS.svg" alt="Twelveth slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-    <div id="Careers" class="pl-0 pr-0">
-        <h3>Careers</h3>
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne" id="headingOne">
-                    <h6 class="mb-0">PSG Prime (Pty) Ltd
-                    </h6>
-                </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li class="col-12">Administrator</li>
-                        <li class="col-12">Dec 2010 - Feb 2011</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" id="headingTwo" type="button" data-toggle="collapse"
-                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <h6 class="mb-0">The Publishing Partnership</h6>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li>Temp Receptionist</li>
-                        <li>June 2013- July 2013</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                    aria-expanded="false" aria-controls="collapseThree" id="headingThree">
-                    <h6 class="mb-0">Kalahari.com</h6>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li class="split">Marketplace Data Capturer</li>
-                        <li class="split">Nov 2014 - Feb 2015</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
-                    aria-expanded="true" aria-controls="collapseFour" id="headingFour">
-                    <h6 class="mb-0">The Publishing Partnership</h6>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li>Admin Assistant (CNA)</li>
-                        <li>Nov 2015 - Jan 2016</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" id="headingFive" type="button" data-toggle="collapse"
-                    data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    <h6 class="mb-0">Denis Dental</h6>
-                </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li>Data Capturer (GEMS)</li>
-                        <li>Feb 2016 - June 2016</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix"
-                    aria-expanded="false" aria-controls="collapseSix" id="headingSix">
-                    <h6 class="mb-0">Romp 'n Roll - Anshan, China</h6>
-                </div>
-                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li class="split">English Second Language Teacher</li>
-                        <li class="split">July 2016 - May 2017</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven"
-                    aria-expanded="true" aria-controls="collapseSeven" id="headingSeven">
-                    <h6 class="mb-0">Isoflow</h6>
-                </div>
-                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li>Intern Front-End Developer</li>
-                        <li>Feb 2018 - Aug 2018</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" id="headingEight" type="button" data-toggle="collapse"
-                    data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                    <h6 class="mb-0">Warp Development</h6>
-                </div>
-                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li>Junior Front-End Theme Creator</li>
-                        <li>Aug 2018 - Oct 2018</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine"
-                    aria-expanded="false" aria-controls="collapseNine" id="headingNine">
-                    <h6 class="mb-0">eComplete</h6>
-                </div>
-                <div id="collapseNine" class="collapse show" aria-labelledby="headingNine" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <li class="split">Mid Front-End</li>
-                        <li class="split">Oct 2018 - Present</li>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header btn btn-link collapsed" id="headingTen" type="button" data-toggle="collapse"
-                    data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                    <h6 class="mb-0">References</h6>
-                </div>
-                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="mt-3 mb3"><b><ins>Gaynor Ismail </ins></b><br>Denis Dental (Mananger) <br>072 185 0432</div>
-                        <div class="mt-3 mb3"><b><ins>Candice Amon </ins></b><br>Life Choices (Head Facilitator) <br>021 696 4157</div>
-                        <div class="mt-3 mb3"><b><ins>Heidi Schre&#x00fc;der </ins></b><br>Warp Development (Snr/Lead Developer) <br>084 211 7249</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="Portfolio">
-        <h3>Portfolio</h3>
 
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Hand Drawings</h5>
-                        <p class="card-text">Please click below to view my hand drawn images</p>
-                        <a id="view-hand-drawings" href="#" class="btn btn-primary view-images">To Images</a>
-                    </div>
-                </div>
+        <div class="tab-content" id="portfolioTabsContent">
+          <div class="tab-pane fade show active" id="drawings-pane" role="tabpanel" aria-labelledby="drawings-tab" tabindex="0">
+            <p class="text-center text-muted mt-3 mb-0">Click an image to view it full size.</p>
+            <div class="gallery-grid">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/Angry.jpg" data-image-caption="Angry">
+                <img src="images/Angry.jpg" alt="Angry — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/Cup.jpg" data-image-caption="Cup">
+                <img src="images/Cup.jpg" alt="Cup — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/Feather.jpg" data-image-caption="Feather">
+                <img src="images/Feather.jpg" alt="Feather — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/HappyKid.jpg" data-image-caption="Happy Kid">
+                <img src="images/HappyKid.jpg" alt="Happy Kid — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/Kiddie.jpg" data-image-caption="Kiddie">
+                <img src="images/Kiddie.jpg" alt="Kiddie — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/Lily.jpg" data-image-caption="Lily">
+                <img src="images/Lily.jpg" alt="Lily — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/Lion.jpg" data-image-caption="Lion">
+                <img src="images/Lion.jpg" alt="Lion — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/Stairs.jpg" data-image-caption="Stairs">
+                <img src="images/Stairs.jpg" alt="Stairs — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/Tap.jpg" data-image-caption="Tap">
+                <img src="images/Tap.jpg" alt="Tap — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/LoveHandDrawn.jpg" data-image-caption="Love (hand drawn)">
+                <img src="images/LoveHandDrawn.jpg" alt="Love — hand drawing" loading="lazy">
+              </a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-image-src="images/love.jpg" data-image-caption="Love, recreated on PC using CorelDRAW">
+                <img src="images/love.jpg" alt="Love — recreated digitally" loading="lazy">
+                <span class="caption">Love, Recreated<br>(CorelDRAW)</span>
+              </a>
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">College Projects</h5>
-                        <p class="card-text">Please click below to view my college project websites</p>
-                        <a id="view-college-projects" href="#" class="btn btn-primary view-images">To Projects</a>
+          </div>
+
+          <div class="tab-pane fade" id="projects-pane" role="tabpanel" aria-labelledby="projects-tab" tabindex="0">
+
+            <!-- Featured project -->
+            <div class="row justify-content-center mt-4">
+              <div class="col-lg-8">
+                <div class="featured-project">
+                  <i class="fa-solid fa-dove" aria-hidden="true"></i>
+                  <h3 class="h5 mt-3">Celebration of Life — Family Memorial Website</h3>
+                  <p class="text-muted mb-3">
+                    A personal tribute website I built and published myself for my grandmother,
+                    Ludewin Elizabeth Meyer. It includes the order of service, hymn lyrics, and
+                    live-stream links so family who couldn't attend in person could join and
+                    follow along remotely.
+                  </p>
+
+                  <div class="site-preview">
+                    <div class="site-preview-bar">
+                      <span class="site-preview-dot site-preview-dot-red"></span>
+                      <span class="site-preview-dot site-preview-dot-yellow"></span>
+                      <span class="site-preview-dot site-preview-dot-green"></span>
+                      <span class="site-preview-url">megymegs.github.io/LEM</span>
                     </div>
+                    <iframe src="https://megymegs.github.io/LEM/"
+                            title="Live preview of the Celebration of Life memorial website"
+                            loading="lazy"></iframe>
+                  </div>
+
+                  <a href="https://megymegs.github.io/LEM/" target="_blank" rel="noopener" class="btn btn-accent btn-sm">
+                    View Site <i class="fa-solid fa-arrow-up-right btn-icon" aria-hidden="true"></i>
+                  </a>
                 </div>
-            </div>
-            <div class="gallery">
-                <div class="handDrawings container-fluid">
-                    <div class="row">
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img1">
-                                <img class="img-fluid gallery-image" src="images/Angry.jpg" alt="Angry">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img1" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Angry.jpg" alt="Angry">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img2">
-                                <img class="img-fluid gallery-image" src="images/Cup.jpg" alt="Cup">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img2" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Cup.jpg" alt="Cup">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img3">
-                                <img class="img-fluid gallery-image" src="images/Feather.jpg" alt="Feather">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img3" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Feather.jpg" alt="Feather">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img4">
-                                <img class="img-fluid gallery-image" src="images/HappyKid.jpg" alt="Happy Kid">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img4" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/HappyKid.jpg" alt="Happy Kid">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img4">
-                                <img class="img-fluid gallery-image" src="images/Kiddie.jpg" alt="Kiddie">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img4" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Kiddie.jpg" alt="Kiddie">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img5">
-                                <img class="img-fluid gallery-image" src="images/Lily.jpg" alt="Lily">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img5" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Lily.jpg" alt="Lily">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img6">
-                                <img class="img-fluid gallery-image" src="images/Lion.jpg" alt="Lion">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img6" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Lion.jpg" alt="Lion">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img7">
-                                <img class="img-fluid gallery-image" src="images/Stairs.jpg" alt="Stairs">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img7" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Stairs.jpg" alt="Stairs">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img8">
-                                <img class="img-fluid gallery-image" src="images/Tap.jpg" alt="Tap">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img8" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Tap.jpg" alt="Tap">
-                                            <div class="d-inline"><button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#hand-img9">
-                                <img class="img-fluid gallery-image" src="images/LoveHandDrawn.jpg" alt="Love Hand Drawn">
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="hand-img9" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/LoveHandDrawn.jpg" alt="Love Hand Drawn">
-                                            <div class="d-inline">
-                                                <button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-3">
-                            <a href="#"  data-toggle="modal" data-target="#pc-img1">
-                                <div class="love-holder">
-                                    <img class="img-fluid gallery-image" id="love" src="images/Love.jpg" alt="Love Recreated">
-                                    <p class="overlay" ><em><strong>Love <br/> Recreated</strong></em></p>
-                                </div>
-                            </a>
-                            <!-- Modal -->
-                            <div class="modal fade" id="pc-img1" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <img class="img-fluid" src="images/Love.jpg" alt="Love Graphic">
-                                            <div class="d-inline">
-                                                <p class="mt-4">Recreated the previous hand drawn image of 'LOVE' from scratch on pc using CorelDraw</p>
-                                                <button type="button" class="btn btn-default mt-4" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-inline">
-                        <button class="btn btn-primary return-hand">Back</button>
-                    </div>
-                </div>
+              </div>
             </div>
 
-            <div class="gallery2">
-                <div class="collegeProjects container-fluid">
-                    <div class="row">
-                        <h6 class="mt-3">Projects compeleted during my coding course, projects have been uploaded as submited for due dates, projects have not been completed or recoded to show progress through course.</h6> 
-                        <p class="ml-auto mr-auto p-2"><em><ins>Please note clicking these links will open a new page</ins></em></p>
-                        <div class="col-6">
-                            <a href="https://megymegs.github.io/Project1-HTML/" target="_blank">
-                                <img class="img-fluid gallery-projects" src="images/HTML.gif" alt="HTML Project">
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            <a href="https://megymegs.github.io/Project2-CSS/" target="_blank">
-                                <img class="img-fluid gallery-projects" src="images/css.gif" alt="CSS Project">
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            <a href="https://megymegs.github.io/Project3-CSS_Grid/" target="_blank">
-                                <img class="img-fluid gallery-projects" src="images/CSS_Grid.gif   " alt="CSS Grid Project">
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            <a href="https://megymegs.github.io/Project4-JavaScript_Project/" target="_blank">
-                                <img class="img-fluid gallery-projects" src="images/JS.gif" alt="javascript Project">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="d-inline">
-                        <button class="btn btn-primary return-hand">Back</button>
-                    </div>
-                </div>
+            <p class="text-center text-muted mt-5 mb-0">
+              Much of my recent commercial work (e.g. e-commerce platforms and public-sector sites
+              built while at Ecomplete, Sensofinity, and via Hashtopic) was delivered as part of a
+              team or under client/employer ownership, so I'm unable to link to it directly here.
+              The projects below are ones I can share publicly.
+            </p>
+
+            <h3 class="h6 text-uppercase text-muted text-center mt-4">Coding Course Projects</h3>
+            <p class="text-center text-muted">Completed during my coding course. Uploaded as submitted for their
+              due dates and left unmodified since, as a record of progress through the course.</p>
+            <p class="text-center text-muted"><em>Note: clicking a project opens it in a new tab.</em></p>
+            <div class="row g-3 justify-content-center">
+              <div class="col-6 col-md-3">
+                <a href="https://megymegs.github.io/Project1-HTML/" target="_blank" rel="noopener" class="text-decoration-none">
+                  <img src="images/HTML.gif" class="img-fluid rounded" alt="HTML Project">
+                  <p class="text-center text-light mt-2 mb-0">Project 1 — HTML</p>
+                </a>
+              </div>
+              <div class="col-6 col-md-3">
+                <a href="https://megymegs.github.io/Project2-CSS/" target="_blank" rel="noopener" class="text-decoration-none">
+                  <img src="images/css_project.jpg" class="img-fluid rounded" alt="CSS Project">
+                  <p class="text-center text-light mt-2 mb-0">Project 2 — CSS</p>
+                </a>
+              </div>
+              <div class="col-6 col-md-3">
+                <a href="https://megymegs.github.io/Project3-CSS_Grid/" target="_blank" rel="noopener" class="text-decoration-none">
+                  <img src="images/CSS_Grid_project.jpg" class="img-fluid rounded" alt="CSS Grid Project">
+                  <p class="text-center text-light mt-2 mb-0">Project 3 — CSS Grid</p>
+                </a>
+              </div>
+              <div class="col-6 col-md-3">
+                <a href="https://megymegs.github.io/Project4-JavaScript_Project/" target="_blank" rel="noopener" class="text-decoration-none">
+                  <img src="images/JS.gif" class="img-fluid rounded" alt="JavaScript Project">
+                  <p class="text-center text-light mt-2 mb-0">Project 4 — JavaScript</p>
+                </a>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div id="Contact">
-        <h3>Contact</h3>
-        <h5 class="pt-4">Megan Meyer</h5>
-        <h6>081 277 3192</h6>
-        <p><a href="mailto:Megymegs@gmail.com"><ins>Megymegs@gmail.com</ins></a></p>
-        <a href="https://www.linkedin.com/in/megymegs" title="LinkedIn" target="_blank"><img class="circle" src="images\LinkedIn.png" alt="LinkedIn Icon" width="40px" height="40px" ></a>
-        <a href="https://github.com/Megymegs" title="github" target="_blank"><img class="circle" src="images\GitHub.png" alt="GitHub Icon" width="40px" height="40px" ></a>
-    </div>
-</div>
-
-
-<div id="top_column" class="d-none d-lg-block">
-    <div class="rightColumn">
-        <h3 id="about">Snippet from Megan</h3>
-        <p>I am a hard-working creative individual with local as well as international experience in the
-            working world in different career paths. I am punctual and pride myself in meeting deadlines, I
-            work well under pressure and I am able to work within a team as well as on my own on tasks and
-            projects.</p>
-        <p>As an individual I bring logical and innovative thinking, I work systemically to ensure the task at
-            hand is completed on time. I have strong attention to detail and the abilty to remain calm within a
-            stressful enviroment.</p>
-    </div>
-</div>
-<div id="middle_column" class="d-none d-lg-block">
-    <div class="leftColumn">
-        <h3 id="education">
-            <ins id="educationSec">Education History</ins>
-        </h3>
-        <div class="edu">
-            <h3><ins>High School</ins></h3>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i><a href="www.oudemolen.org.za/">Oude
-                    Molen Technical High School - Matric (2010) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <h3><ins>Vocational Courses</ins></h3>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"><a href="https://www.globaltefl.uk.com/"></i>Global
-                Language Training - 150 Master TEFL Course (2014) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"><a href="https://www.goskills.com/"></i>Go
-                Skills Limited - Advanced Microsoft Excel (2015) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-        </div>
-        <div class="edu">
-            <h3><ins><a href="https://www.open2study.com/" target="_blank" style="color: black;">Open 2 Study </a> (2016) <i class="fa fa-external-link" aria-hidden="true"></i></ins></h3>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Management for a Competitive Edge</li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Leadership: Identity, Influence and Power</li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Human Resources</li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Strategic Management</li>
-            <li><i class="fa fa-star fa-spin fa-1x fa-fw" aria-hidden="true"></i>Negotiation and Conflict
-                Resolution</li>
-        </div>
-        <div id="bottomColumn">
-            <h3><ins><a href="www.lifechoices.co.za/">Salesians Life Choices Academy <i class="fa fa-external-link" aria-hidden="true"></i></a></ins></h3>
-            <p>Completed a 6-month course with Life Choices Academy, learning the Most Important Job Skill of the Future, CODING! During the time at Lifechoices, I gained knowlogde on modern web languages(HTML, CSS, jQuery, JavaScript, Sass etc), design thinking and undergo professional development (i.e to work cohesively in a team and get practice with the tools used in the professional industry.) that has prepared me for the working world. I have gained confidence in being able to assess problems and design solutions to the problems.</p>
-        </div>
-    </div>
-    <div class="rightColumn" style="padding: 2% 1% 1px; overflow:hidden;">
-        <h3 id="skills">
-            <ins id="skillsSec">Skills Gained</ins>
-        </h3>
-        <ul id="slides">
-            <li class="slide showing"><img src="images/HTML.png" height="100%" width="100%"></li>
-            <li class="slide"><img src="images/CSS.png" height="70%" width="100%"></li>
-            <li class="slide"><img src="images/javascript.png" height="100%" width="100%"></li>
-            <li class="slide"><img src="images/jquery.png" height="100%" width="100%"></li>
-            <li class="slide"><img src="images/Git.png" height="70%" width="100%"></li>
-            <li class="slide"><img src="images/SASS.svg" height="70%" width="100%"></li>
-            <li class="slide"><img src="images/Word.png" height="70%" width="100%"></li>
-            <li class="slide"><img src="images/outlook.png" height="70%" width="100%"></li>
-            <li class="slide"><img src="images/excel.png" height="70%" width="100%"></li>
-            <li class="slide"><img src="images/coreldraw.png" height="80%" width="100%"></li>
-            <li class="slide"><img src="images/photoshop.png" height="70%" width="100%"></li>
-        </ul>
-    </div>
-</div>
-<div id="last_column" class="d-none d-lg-block">
-    <div class="leftColumn">
-        <h3 id="work">
-            <ins id="workSec">Work Experience</ins>
-        </h3>
-        <ul id="experience">
-            <li class="split">PSG Prime (Pty) Ltd </li>
-            <li class="split">Administrator</li>
-            <li class="split">Dec 2010 - Feb 2011</li>
-            <li>The Publishing Partnership</li>
-            <li>Temp Receptionist</li>
-            <li>June 2013- July 2013</li>
-            <li class="split">Kalahari.com</li>
-            <li class="split">Marketplace Data Capturer</li>
-            <li class="split">Nov 2014 - Feb 2015</li>
-            <li>The Publishing Partnership</li>
-            <li>Admin Assistant (CNA)</li>
-            <li>Nov 2015 - Jan 2016</li>
-            <li class="split">Denis Dental</li>
-            <li class="split">Data Capturer (GEMS)</li>
-            <li class="split">Feb 2016 - June 2016</li>
-            <li>Romp 'n Roll - Anshan, China</li>
-            <li>English Teacher</li>
-            <li>July 2016 - May 2017</li>
-        </ul>
-    </div>
-    <div class="rightColumn">
-        <h3 id="portfolio">
-            <ins id="portfolioSec">Portfolio</ins>
-        </h3>
-        <div class="portfolio_Columns">
-            <div id="topColumn1">
-                <h3><ins>Hand Drawings</ins></h3>
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="row justify-content-center g-5">
+          <div class="col-lg-6">
+            <form class="contact-form" name="contactForm" method="post" action="php/form_email.php">
+              <div class="mb-3">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" maxlength="30" required>
+              </div>
+              <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" maxlength="30" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" maxlength="80" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" maxlength="1000" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-accent">Send Message</button>
+            </form>
+          </div>
+          <div class="col-lg-5">
+            <h3 class="h5 mb-3">Megan Meyer</h3>
+            <ul class="list-unstyled contact-info">
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Cape Town, Western Cape, South Africa</li>
+              <li><i class="fa-solid fa-phone" aria-hidden="true"></i>068 241 7522</li>
+              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:megymegs@gmail.com">megymegs@gmail.com</a></li>
+            </ul>
+            <div class="social-icons mb-4">
+              <a href="https://www.linkedin.com/in/megymegs/" title="LinkedIn" aria-label="Megan Meyer on LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="https://github.com/Megymegs" title="GitHub" aria-label="Megan Meyer on GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
             </div>
-            <div id="drawings">
-            </div>
+
+            <p class="text-muted small mb-0">
+              Available 24/7 across time zones for remote contract, part-time, and freelance work with
+              US, UK, and EU clients. References available on request.
+            </p>
+          </div>
         </div>
-        <div class="portfolio_Columns">
-            <div id="topColumn2">
-                <h3><ins>Websites</ins></h3>
-            </div>
-            <div id="web">
-                <div id="Proj1" class="columnBoxes">
-                    <a href="https://megymegs.github.io/Project1-HTML/" target="_blank">
-                        <div style="height: 60%; margin-bottom:19%;"><img src="images\HTML.png" height="100%" width="90%"></div>
-                        <h4 style="margin:0;">Project 1 - HTML Project</h4>
-                    </a>
-                </div>
-                <div id="Proj2" class="columnBoxes">
-                    <a href="https://megymegs.github.io/Project2-CSS/" target="_blank">
-                        <div style="margin-top: 14%; margin-bottom:29%;"><img src="images\CSS.png" height="100%" width="100%"></div>
-                        <h4 style="margin:0;">Project 2 - CSS Project</h4>
-                    </a>
-                </div>
-                <div id="Proj3" class="columnBoxes">
-                    <a href="https://megymegs.github.io/Project3-CSS_Grid/" target="_blank">
-                        <div style="height:60%; margin-bottom:20%"><img src="images\CSS_Grid.jpg" height="100%" width="100%"></div>
-                        <h4>Project 3 - CSS Grid Project</h4>
-                    </a>
-                </div>
-                <div id="Proj4" class="columnBoxes">
-                    <a href="https://megymegs.github.io/Project4-JavaScript_Project/" target="_blank">
-                        <div style="margin-bottom:20%; height:60%;"><img src="images\javascript.png" height="100% width="
-                                100%"></div>
-                        <h4>Project 4 - JavaScript Project</h4>
-                    </a>
-                </div>
-            </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="siteFooter">
+    <p class="mb-0">Designed by <a href="#home">Megan Meyer</a></p>
+  </footer>
+
+  <!-- Lightbox modal (shared by all gallery images) -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h2 class="modal-title h6" id="lightboxModalLabel">Preview</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body text-center">
+          <img id="lightboxImage" src="" alt="" class="img-fluid rounded mb-2">
+          <p id="lightboxCaption" class="text-muted mb-0"></p>
+        </div>
+      </div>
     </div>
-    <div class="leftColumn">
-        <h3 id="contact">
-            <ins>Contact</ins>
-        </h3>
-        <form name="contactForm" method="get" action="form_email.php" enctype="text/plain">
-            <table>
-                <tr>
-                    <td valign="top">
-                        <label for="first_name">First Name</label>
-                    </td>
-                    <td valign="top">
-                        <input type="text" name="first_name" maxlength="30" size="50">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <label for="last_name">Last Name</label>
-                    </td>
-                    <td valign="top">
-                        <input type="text" name="last_name" maxlength="30" size="50">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <label for="email">Email Address</label>
-                    </td>
-                    <td valign="top">
-                        <input type="text" name="email" maxlength="80" size="50">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <label for="message">Message</label>
-                    </td>
-                    <td>
-                        <textarea name="message" maxlength="1000" cols="51" rows="8"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align:center">
-                        <input type="submit" value="Submit" style="width: 40%; margin-left: 24%; height: 24px;">
-                    </td>
-                </tr>
-            </table>
-        </form>
-        <div id="info" style="width:48%; margin-top:0%;">
-            <table>
-                <tr>
-                    <th colspan="3" style="text-align:center; font-size:18px"><ins>References</ins></th>
-                </tr>
-                <tr>
-                    <td>Marché Jason</td>
-                    <td style="width:40%">The Puplishing Partnership</td>
-                    <td>074 529 4250</td>
-                </tr>
-                <tr>
-                    <td>Gaynor Ismail</td>
-                    <td style="width:40%">Denis Dental</td>
-                    <td>072 185 0432</td>
-                </tr>
-                <tr>
-                    <td>Candice Amon</td>
-                    <td style="width:40%">Life Choices Academy</td>
-                    <td>021 696 4157</td>
-                </tr>
-            </table>
-        </div>
-        <div id="info" style="margin-left:11%;">
-            <p>Megan Meyer</p>
-            <p>081 277 3192</p>
-            <p><a href="mailto:Megymegs@gmail.com"><ins>Megymegs@gmail.com</ins></a></p>
-            <a href="https://www.linkedin.com/in/megymegs" title="LinkedIn" target="_blank"><img class="circle" src="images\LinkedIn.png" alt="LinkedIn Icon" width="40px" height="40px" ></a>
-            <a href="https://github.com/Megymegs" title="github" target="_blank"><img class="circle" src="images\GitHub.png" alt="GitHub Icon" width="40px" height="40px" ></a>
-        </div>
-    </div>
-</div>
-<!-- 
-<div class='scrolltop'>
-    <div class='scroll icon'><i class="fa fa-2x fa-angle-up"></i></div>
-</div> -->
+  </div>
 
-        </main>
-        <footer>
-    <em><p><small>Designed by&nbsp;</small><a href="#Home" class="Home">Megan Meyer</a></p></em>
-</footer>
+  <a href="#home" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
+  </a>
 
-
-
-        <script src="js/jquery-3.7.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-      </section>
-    </body>
-</html> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
