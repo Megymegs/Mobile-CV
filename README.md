@@ -1,5 +1,7 @@
 # Mobile-CV
 
+**Live site:** https://megymegs.github.io/Mobile-CV/
+
 Fully responsive, mobile-first personal CV / portfolio website for Megan
 Meyer, built with semantic HTML5, Bootstrap 5, and vanilla JavaScript (no
 jQuery). Styles are written mobile-first (base rules target small screens,
