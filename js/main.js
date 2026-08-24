@@ -166,19 +166,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // "Earthly Age" / "Professional Age" / "Dev Age": all calculated live
-  // from today's date so they're always correct, rather than numbers that
-  // need updating by hand.
+  // "Career Age" / "Earthly Age" / "Dev Age": all calculated live from
+  // today's date so they're always correct, rather than numbers that need
+  // updating by hand. Shown youngest-first: Career Age, Earthly Age, Dev Age.
   //
-  // - Earthly Age:       straight age from date of birth.
-  // - Professional Age:  straight count of years since my first job
-  //                       (no multiplier, just years worked, of any kind).
-  // - Dev Age:            Earthly Age + extra cellular aging accumulated
-  //                       over the years actually spent working as a
-  //                       developer (dev career start -> today). That extra
-  //                       aging is modelled as three contributing factors,
-  //                       each inspired by published research (rounded for
-  //                       fun, not clinical precision):
+  // - Career Age:  straight count of years since my first job (no
+  //                multiplier, just years worked, of any kind).
+  // - Earthly Age: straight age from date of birth.
+  // - Dev Age:     Earthly Age + extra cellular aging accumulated over the
+  //                years actually spent working as a developer (dev career
+  //                start -> today). That extra aging is modelled as three
+  //                contributing factors, each inspired by published
+  //                research (rounded for fun, not clinical precision):
   //   - Lack of sleep:    short/poor sleep is linked to faster telomere
   //                       shortening (a measurable marker of cellular aging).
   //   - Stress:           Epel et al., PNAS 2004 found sustained high
@@ -187,10 +186,15 @@ document.addEventListener("DOMContentLoaded", function () {
   //   - Mental drain:     sustained heavy cognitive load taps the same
   //                       stress-response (HPA axis) pathway, compounding
   //                       the effect above.
+  //
+  // Steal this formula for your own Dev Age:
+  //   Dev Age = Earthly Age + (years worked as a developer x 1)
+  //   (that "x 1" is 0.3 for sleep debt + 0.4 for stress + 0.3 for mental
+  //   drain, tune those three to taste)
+  var careerAgeEl = document.getElementById("careerAge");
   var earthlyAgeEl = document.getElementById("earthlyAge");
-  var professionalAgeEl = document.getElementById("professionalAge");
   var devAgeEl = document.getElementById("devAge");
-  if (earthlyAgeEl && professionalAgeEl && devAgeEl) {
+  if (careerAgeEl && earthlyAgeEl && devAgeEl) {
     var MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.25;
 
     // Extra years of cellular aging per year worked as a developer,
@@ -206,8 +210,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var devStartDate = new Date(2017, 7, 1); // August 2017, started learning to code
     var now = new Date();
 
+    var careerAgeYears = Math.max(0, (now - careerStartDate) / MS_PER_YEAR);
     var earthlyAgeYears = (now - birthDate) / MS_PER_YEAR;
-    var professionalAgeYears = Math.max(0, (now - careerStartDate) / MS_PER_YEAR);
     var yearsAsDev = Math.max(0, (now - devStartDate) / MS_PER_YEAR);
     var extraAgingPerYear =
       EXTRA_AGING_PER_DEV_YEAR.lackOfSleep +
@@ -215,8 +219,8 @@ document.addEventListener("DOMContentLoaded", function () {
       EXTRA_AGING_PER_DEV_YEAR.mentalDrain;
     var devAgeYears = earthlyAgeYears + yearsAsDev * extraAgingPerYear;
 
+    careerAgeEl.textContent = Math.floor(careerAgeYears) + " years";
     earthlyAgeEl.textContent = Math.floor(earthlyAgeYears) + " years";
-    professionalAgeEl.textContent = Math.floor(professionalAgeYears) + " years";
     devAgeEl.textContent = Math.floor(devAgeYears) + " years";
   }
 });
