@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var flooredDevYears = Math.floor(yearsAsDev);
       var exampleDevAge = flooredEarthly + flooredDevYears * extraAgingPerYear;
       devAgeExampleEl.textContent =
-        "Example: " + flooredEarthly + " + (" + flooredDevYears + " years as a dev \u00d7 1) = " + Math.floor(exampleDevAge);
+        "Example: " + flooredEarthly + " + " + flooredDevYears + " years as a dev \u00d7 (0.3 + 0.4 + 0.3) = " + Math.floor(exampleDevAge);
     }
   }
 });
