@@ -194,6 +194,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var earthlyAgeEl = document.getElementById("earthlyAge");
   var devAgeEl = document.getElementById("devAge");
   if (careerAgeEl && earthlyAgeEl && devAgeEl) {
+    var MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365.25;
+
     // Extra years of cellular aging per year worked as a developer,
     // one contribution per factor.
     var EXTRA_AGING_PER_DEV_YEAR = {
@@ -202,47 +204,34 @@ document.addEventListener("DOMContentLoaded", function () {
       willPower: 0.4
     };
 
-    // Every age on this card uses the same method: whole completed months,
-    // expressed in years and rounded down to the nearest tenth (i.e.
-    // rounded down to the nearest completed month, never rounded up).
-    function wholeMonthsBetween(start, end) {
-      var months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
-      if (end.getDate() < start.getDate()) {
-        months -= 1;
-      }
-      return Math.max(0, months);
-    }
-
-    function ageInYears(start, end) {
-      return Math.floor((wholeMonthsBetween(start, end) / 12) * 10) / 10;
-    }
-
     var birthDate = new Date(1993, 4, 14); // 14 May 1993
     var careerStartDate = new Date(2010, 11, 1); // December 2010, first job (PSG Prime)
     var devStartDate = new Date(2017, 7, 1); // August 2017, started learning to code
     var now = new Date();
 
-    var careerAgeYears = ageInYears(careerStartDate, now);
-    var earthlyAgeYears = ageInYears(birthDate, now);
-    var yearsAsDev = ageInYears(devStartDate, now);
+    var careerAgeYears = Math.max(0, (now - careerStartDate) / MS_PER_YEAR);
+    var earthlyAgeYears = (now - birthDate) / MS_PER_YEAR;
+    var yearsAsDev = Math.max(0, (now - devStartDate) / MS_PER_YEAR);
     var extraAgingPerYear =
       EXTRA_AGING_PER_DEV_YEAR.powerNaps +
       EXTRA_AGING_PER_DEV_YEAR.ambition +
       EXTRA_AGING_PER_DEV_YEAR.willPower;
-    var devAgeYears = Math.floor((earthlyAgeYears + yearsAsDev * extraAgingPerYear) * 10) / 10;
+    var devAgeYears = earthlyAgeYears + yearsAsDev * extraAgingPerYear;
 
-    careerAgeEl.textContent = careerAgeYears.toFixed(1) + " years";
-    earthlyAgeEl.textContent = earthlyAgeYears.toFixed(1) + " years";
-    devAgeEl.textContent = devAgeYears.toFixed(1) + " years";
+    careerAgeEl.textContent = Math.floor(careerAgeYears) + " years";
+    earthlyAgeEl.textContent = Math.floor(earthlyAgeYears) + " years";
+    devAgeEl.textContent = Math.floor(devAgeYears) + " years";
 
-    // Worked example using today's actual values (same rounding as above),
-    // so it's never a made-up illustration, it's always this exact page's
-    // numbers.
+    // Worked example using today's actual whole-number values, so it's
+    // never a made-up illustration, it's always this exact page's numbers.
     var devAgeExampleEl = document.getElementById("devAgeExample");
     if (devAgeExampleEl) {
+      var flooredEarthly = Math.floor(earthlyAgeYears);
+      var flooredDevYears = Math.floor(yearsAsDev);
+      var exampleDevAge = flooredEarthly + flooredDevYears * extraAgingPerYear;
       devAgeExampleEl.textContent =
-        "Example: " + earthlyAgeYears.toFixed(1) + " + " + yearsAsDev.toFixed(1) +
-        " years as a dev \u00d7 (0.3 + 0.35 + 0.4) = " + devAgeYears.toFixed(1);
+        "Example: " + flooredEarthly + " + " + flooredDevYears +
+        " years as a dev \u00d7 (0.3 + 0.35 + 0.4) = " + Math.floor(exampleDevAge);
     }
   }
 });
