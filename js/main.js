@@ -201,8 +201,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // one contribution per factor.
     var EXTRA_AGING_PER_DEV_YEAR = {
       lackOfSleep: 0.3,
-      stress: 0.4,
-      mentalDrain: 0.3
+      stress: 0.3,
+      mentalDrain: 0.4
     };
 
     var birthDate = new Date(1993, 4, 14); // 14 May 1993
@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var flooredDevYears = Math.floor(yearsAsDev);
       var exampleDevAge = flooredEarthly + flooredDevYears * extraAgingPerYear;
       devAgeExampleEl.textContent =
-        "Example: " + flooredEarthly + " + " + flooredDevYears + " years as a dev \u00d7 (0.3 + 0.4 + 0.3) = " + Math.floor(exampleDevAge);
+        "Example: " + flooredEarthly + " + " + flooredDevYears + " years as a dev \u00d7 (0.3 + 0.3 + 0.4) = " + Math.floor(exampleDevAge);
     }
   }
 });
