@@ -222,5 +222,16 @@ document.addEventListener("DOMContentLoaded", function () {
     careerAgeEl.textContent = Math.floor(careerAgeYears) + " years";
     earthlyAgeEl.textContent = Math.floor(earthlyAgeYears) + " years";
     devAgeEl.textContent = Math.floor(devAgeYears) + " years";
+
+    // Worked example using today's actual whole-number values, so it's
+    // never a made-up illustration, it's always this exact page's numbers.
+    var devAgeExampleEl = document.getElementById("devAgeExample");
+    if (devAgeExampleEl) {
+      var flooredEarthly = Math.floor(earthlyAgeYears);
+      var flooredDevYears = Math.floor(yearsAsDev);
+      var exampleDevAge = flooredEarthly + flooredDevYears * extraAgingPerYear;
+      devAgeExampleEl.textContent =
+        "Example: " + flooredEarthly + " + (" + flooredDevYears + " years as a dev \u00d7 1) = " + Math.floor(exampleDevAge);
+    }
   }
 });

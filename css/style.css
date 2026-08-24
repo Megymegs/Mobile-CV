@@ -572,6 +572,18 @@ footer a {
   font-family: "Courier New", ui-monospace, monospace;
   font-size: 0.8rem;
   color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.dev-age-formula-example {
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  padding-top: 0.75rem;
   margin-bottom: 0;
   white-space: normal;
   overflow-wrap: break-word;
