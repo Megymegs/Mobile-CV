@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Megan Meyer — CV / Portfolio
+   Megan Meyer, CV / Portfolio
    Modern, fully responsive stylesheet (Bootstrap 5 base + custom theme)
    ========================================================================== */
 
@@ -67,7 +67,7 @@ body {
    The site behaves like a small app: it opens on a landing page and each
    nav item swaps in a single content "page" (with a brief loading screen)
    rather than continuously scrolling through every section. This is all
-   progressive enhancement done in js/main.js — if JavaScript fails to load,
+   progressive enhancement done in js/main.js. If JavaScript fails to load,
    every section is still present in the DOM and simply flows as one long,
    scrollable page. */
 #mainNavbar {

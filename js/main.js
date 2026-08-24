@@ -1,10 +1,10 @@
-// Megan Meyer — CV / Portfolio
+// Megan Meyer, CV / Portfolio
 // Vanilla JS only (no jQuery). Bootstrap 5 handles the navbar collapse,
 // tabs, accordion and modals declaratively via data attributes.
 //
 // App-style navigation: the site opens on a landing page and each nav item
 // swaps in a single content "page" (with a brief loading screen) instead of
-// continuously scrolling through every section — this is all progressive
+// continuously scrolling through every section. This is all progressive
 // enhancement. If this script fails to load, every section is still present
 // in the DOM (nothing is hidden by default in the HTML/CSS) and the page
 // simply reads as one long, scrollable document.
@@ -166,13 +166,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // "Earthly Age" / "Professional Age" / "Dev Age" — all calculated live
+  // "Earthly Age" / "Professional Age" / "Dev Age": all calculated live
   // from today's date so they're always correct, rather than numbers that
   // need updating by hand.
   //
   // - Earthly Age:       straight age from date of birth.
   // - Professional Age:  straight count of years since my first job
-  //                       (no multiplier — just years worked, of any kind).
+  //                       (no multiplier, just years worked, of any kind).
   // - Dev Age:            Earthly Age + extra cellular aging accumulated
   //                       over the years actually spent working as a
   //                       developer (dev career start -> today). That extra
@@ -202,8 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     var birthDate = new Date(1993, 4, 14); // 14 May 1993
-    var careerStartDate = new Date(2010, 11, 1); // December 2010 — first job (PSG Prime)
-    var devStartDate = new Date(2017, 7, 1); // August 2017 — started learning to code
+    var careerStartDate = new Date(2010, 11, 1); // December 2010, first job (PSG Prime)
+    var devStartDate = new Date(2017, 7, 1); // August 2017, started learning to code
     var now = new Date();
 
     var earthlyAgeYears = (now - birthDate) / MS_PER_YEAR;
