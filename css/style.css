@@ -522,10 +522,11 @@ footer a {
 
 .dev-years-value {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent);
-  line-height: 1;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .dev-years-label {

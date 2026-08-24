@@ -215,8 +215,8 @@ document.addEventListener("DOMContentLoaded", function () {
       EXTRA_AGING_PER_DEV_YEAR.mentalDrain;
     var devAgeYears = earthlyAgeYears + yearsAsDev * extraAgingPerYear;
 
-    earthlyAgeEl.textContent = Math.floor(earthlyAgeYears);
-    professionalAgeEl.textContent = Math.floor(professionalAgeYears);
-    devAgeEl.textContent = Math.floor(devAgeYears);
+    earthlyAgeEl.textContent = Math.floor(earthlyAgeYears) + " years";
+    professionalAgeEl.textContent = Math.floor(professionalAgeYears) + " years";
+    devAgeEl.textContent = Math.floor(devAgeYears) + " years";
   }
 });
