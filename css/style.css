@@ -483,6 +483,13 @@ footer a {
   color: var(--accent);
 }
 
+.dev-age-tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
 .fun-fact {
   background: var(--bg-alt);
   border: 1px dashed rgba(191, 34, 85, 0.4);
