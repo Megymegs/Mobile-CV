@@ -178,19 +178,18 @@ document.addEventListener("DOMContentLoaded", function () {
   //                start -> today). That extra aging is modelled as three
   //                contributing factors, each inspired by published
   //                research (rounded for fun, not clinical precision):
-  //   - Lack of sleep:    short/poor sleep is linked to faster telomere
-  //                       shortening (a measurable marker of cellular aging).
-  //   - Stress:           Epel et al., PNAS 2004 found sustained high
-  //                       perceived stress corresponded to roughly a decade
-  //                       of extra telomere aging.
-  //   - Mental drain:     sustained heavy cognitive load taps the same
-  //                       stress-response (HPA axis) pathway, compounding
-  //                       the effect above.
+  //   - Power naps:  short/poor sleep is linked to faster telomere
+  //                  shortening (a measurable marker of cellular aging).
+  //   - Ambition:    Epel et al., PNAS 2004 found sustained high perceived
+  //                  stress corresponded to roughly a decade of extra
+  //                  telomere aging.
+  //   - Will power:  sustained heavy cognitive load taps the same
+  //                  stress-response (HPA axis) pathway, compounding the
+  //                  effect above.
   //
   // Steal this formula for your own Dev Age:
-  //   Dev Age = Earthly Age + (years worked as a developer x 1)
-  //   (that "x 1" is 0.3 for sleep debt + 0.4 for stress + 0.3 for mental
-  //   drain, tune those three to taste)
+  //   Dev Age = Earthly Age + years worked as a developer x (0.3 + 0.35 + 0.4)
+  //   (0.3 power naps + 0.35 ambition + 0.4 will power, tune those three to taste)
   var careerAgeEl = document.getElementById("careerAge");
   var earthlyAgeEl = document.getElementById("earthlyAge");
   var devAgeEl = document.getElementById("devAge");
@@ -200,9 +199,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Extra years of cellular aging per year worked as a developer,
     // one contribution per factor.
     var EXTRA_AGING_PER_DEV_YEAR = {
-      lackOfSleep: 0.3,
-      stress: 0.3,
-      mentalDrain: 0.4
+      powerNaps: 0.3,
+      ambition: 0.35,
+      willPower: 0.4
     };
 
     var birthDate = new Date(1993, 4, 14); // 14 May 1993
@@ -214,9 +213,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var earthlyAgeYears = (now - birthDate) / MS_PER_YEAR;
     var yearsAsDev = Math.max(0, (now - devStartDate) / MS_PER_YEAR);
     var extraAgingPerYear =
-      EXTRA_AGING_PER_DEV_YEAR.lackOfSleep +
-      EXTRA_AGING_PER_DEV_YEAR.stress +
-      EXTRA_AGING_PER_DEV_YEAR.mentalDrain;
+      EXTRA_AGING_PER_DEV_YEAR.powerNaps +
+      EXTRA_AGING_PER_DEV_YEAR.ambition +
+      EXTRA_AGING_PER_DEV_YEAR.willPower;
     var devAgeYears = earthlyAgeYears + yearsAsDev * extraAgingPerYear;
 
     careerAgeEl.textContent = Math.floor(careerAgeYears) + " years";
@@ -231,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var flooredDevYears = Math.floor(yearsAsDev);
       var exampleDevAge = flooredEarthly + flooredDevYears * extraAgingPerYear;
       devAgeExampleEl.textContent =
-        "Example: " + flooredEarthly + " + " + flooredDevYears + " years as a dev \u00d7 (0.3 + 0.3 + 0.4) = " + Math.floor(exampleDevAge);
+        "Example: " + flooredEarthly + " + " + flooredDevYears + " years as a dev \u00d7 (0.3 + 0.35 + 0.4) = " + Math.floor(exampleDevAge);
     }
   }
 });
