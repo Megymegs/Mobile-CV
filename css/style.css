@@ -538,6 +538,39 @@ footer a {
   margin-top: 0.35rem;
 }
 
+.dev-age-formula {
+  background: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.dev-age-formula-title {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.dev-age-formula-eq {
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  word-spacing: 0.1em;
+}
+
+.dev-age-formula-breakdown {
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
 .gallery-grid .caption {
   position: absolute;
   inset: 0;
