@@ -544,6 +544,8 @@ footer a {
   border-radius: 10px;
   padding: 1.25rem;
   text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .dev-age-formula-title {
@@ -561,7 +563,9 @@ footer a {
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.5rem;
-  word-spacing: 0.1em;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .dev-age-formula-breakdown {
@@ -569,6 +573,15 @@ footer a {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-bottom: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 400px) {
+  .dev-age-formula-eq {
+    font-size: 0.85rem;
+  }
 }
 
 .gallery-grid .caption {
