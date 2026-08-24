@@ -182,6 +182,34 @@ footer a {
   background-color: var(--bg-darker) !important;
 }
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-light) !important;
+}
+
+.navbar-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.navbar-brand span {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+  .navbar-brand span {
+    font-size: 0.85rem;
+  }
+}
+
 .navbar .nav-link {
   color: var(--text-light);
   font-weight: 500;
